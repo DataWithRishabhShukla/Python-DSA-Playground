@@ -1,7 +1,7 @@
 
 
 def print_n_to_one(n):
-    if n == 0:
+    if n <= 0:
         return 
     print(n)
     print_n_to_one(n-1)
