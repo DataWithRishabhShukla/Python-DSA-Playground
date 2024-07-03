@@ -20,17 +20,19 @@ def search(head, x):
         curr = curr.next
     return -1 
 
+def insert_at_begin(head,key):
+    node = Node(key)
+    node.next = head
+    return node 
+
+
 
 # Shorter form of the code 
-head = Node(10)
-head.next = Node(20)
-head.next.next = Node(30)
-head.next.next.next = Node(40)
+head = None
+head = insert_at_begin(head, 40)
+head = insert_at_begin(head, 30)
+head = insert_at_begin(head, 20)
+head = insert_at_begin(head, 10)
+head = insert_at_begin(head, 5)
 
 print_list(head)
-
-print(search(head, 30))
-print(search(head, 100))
-
-head = None 
-print(search(head, 100))
