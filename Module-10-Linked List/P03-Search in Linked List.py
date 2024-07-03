@@ -30,3 +30,6 @@ print_list(head)
 
 print(search(head, 30))
 print(search(head, 100))
+
+head = None 
+print(search(head, 100))
