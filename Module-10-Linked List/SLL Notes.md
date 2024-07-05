@@ -2,6 +2,8 @@
 
 #### Singly Linked List
 - We need to give curr != None only when we in case of searching and printing the elements.
+- In the other cased we need not traverse till the last element .
+- 
 
 ```python
 def print_list(head):
@@ -19,4 +21,45 @@ def search(head, x):
             return pos
         curr = curr.next
     return -1 
+
+def insert_at_end(head,key):
+    node = Node(key)
+
+    if  head == None:
+        return node
+    curr = head
+    while curr.next != None:
+        curr = curr.next
+
+    curr.next = node
+    return head
+```
+
+### Finding Middle of SLL
+```python
+def print_middle(head):
+    if head == None:
+        return None 
+    
+    curr = head
+    pos = 0
+    while curr != None :
+        curr = curr.next
+        pos = pos + 1
+    
+    curr = head
+    for i in range(pos//2):
+        curr = curr.next
+    print(curr.key)
+
+def print_middle_efficient(head):
+    if head == None:
+        return None 
+    
+    slow = head
+    fast = head
+    while fast != None and fast.next != None:
+        slow = slow.next
+        fast = fast.next.next 
+    print(slow.key)
 ```
