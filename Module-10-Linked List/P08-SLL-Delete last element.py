@@ -74,7 +74,7 @@ def delete_last_node(head):
     
     if head.next == None:
         return None
-        
+
     curr = head 
     # pos = 1
     while curr.next.next != None:
@@ -87,6 +87,14 @@ def delete_last_node(head):
     return head
     # print(curr.next.key)
     
+def delete_nth_node(ptr):
+    temp = ptr.next
+    ptr.key = ptr.next.key
+    ptr.next = temp.next
+
+
+
+
 
 
 head = None
@@ -96,9 +104,6 @@ head = insert_at_begin(head, 30)
 head = insert_at_begin(head, 20)
 head = insert_at_begin(head, 10)
 head = insert_at_begin(head, 5)
-
-
-
 
 print("\n\n***********************************")
 print_list(head)

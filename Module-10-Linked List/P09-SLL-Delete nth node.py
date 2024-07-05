@@ -52,46 +52,61 @@ def insert_at_pos(head, pos, key):
         if pos == pointer:
             break 
         pointer = pointer +1
-        curr = curr.next
-    
+        curr = curr.next  
     # print(f"Current pointer value {pointer}")
-
     if curr.next == None:
         print(f"\nWARN : POS: {pos} is greater than length of LL: {pointer}. Ignoring the insert...\n")
         return head
-
     temp = curr.next 
     curr.next = node
     node.next = temp
-
     return head
 
+def delete_first_node(head):
+    if head == None:
+        return None
+    else :
+        return head.next 
+
+def delete_last_node(head):
+    if head == None:
+        return None
+    
+    if head.next == None:
+        return None
+
+    curr = head 
+    # pos = 1
+    while curr.next.next != None:
+        curr = curr.next
+        # pos = pos + 1
+    # print(pos)
+    # print(curr.key)
+    print(f"deleting the node {curr.next.key}...")
+    curr.next = None
+    return head
+    # print(curr.next.key)
+    
+def delete_nth_node(ptr):
+    temp = ptr.next
+    ptr.key = ptr.next.key
+    ptr.next = temp.next
 
 
-# Shorter form of the code 
+
+
+
+
 head = None
 head = insert_at_begin(head, 40)
+head = delete_last_node(head)
 head = insert_at_begin(head, 30)
 head = insert_at_begin(head, 20)
 head = insert_at_begin(head, 10)
 head = insert_at_begin(head, 5)
 
-
+print("\n\n***********************************")
 print_list(head)
-print("\nInserting 66 at pos 2 ...")
-head = insert_at_pos(head, 2 , 66)
+print(f"\nDeleting the nth node from the last...")
+delete_nth_node(Node(20))
 print_list(head)
-print("\n\n")
-
-print_list(head)
-print("\nInserting 99 at pos 5 ...")
-head = insert_at_pos(head, 5 , 99)
-print_list(head)
-print("\n\n")
-
-
-print_list(head)
-print("\nInserting 111 at pos 9 ...")
-head = insert_at_pos(head, 9 , 111)
-print_list(head)
-print("\n\n")
