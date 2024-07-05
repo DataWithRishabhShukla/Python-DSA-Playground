@@ -1,6 +1,7 @@
 ### Topic - SLL 
 
-#### We need to give curr != None only when we in case of searching and printing the elements.
+#### Singly Linked List
+- We need to give curr != None only when we in case of searching and printing the elements.
 
 ```python
 def print_list(head):
