@@ -36,6 +36,7 @@ def insert_at_end(head,key):
 ```
 
 ### Finding Middle of SLL
+- if we don't use and in [while fast != None and fast.next != None] , then slow pointed will be stuck .
 ```python
 def print_middle(head):
     if head == None:
@@ -52,6 +53,7 @@ def print_middle(head):
         curr = curr.next
     print(curr.key)
 
+# Using the single traversal
 def print_middle_efficient(head):
     if head == None:
         return None 
@@ -62,4 +64,12 @@ def print_middle_efficient(head):
         slow = slow.next
         fast = fast.next.next 
     print(slow.key)
+```
+
+### nth node from the last 
+- we need find nth node from last in liked list.
+- Last node index is - 1
+- 
+```python
+
 ```
