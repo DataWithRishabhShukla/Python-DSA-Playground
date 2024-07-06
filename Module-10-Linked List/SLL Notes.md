@@ -69,7 +69,86 @@ def print_middle_efficient(head):
 ### nth node from the last 
 - we need find nth node from last in liked list.
 - Last node index is - 1
-- 
-```python
 
+```python
+def nth_element_from_end(head,e):
+    if head == None :
+        return None
+    
+    curr = head
+    count = 0
+
+    while curr != None :
+        count = count + 1 
+        curr = curr.next 
+
+    if e > count :
+        return None
+
+
+    # print(f"\n\nLegth of list is  : {count}")
+    # print(f"Legth - index {e}  : {count-e}")
+    curr = head 
+    for i in range(count-e):
+        curr = curr.next
+
+    print(f"\n{e}th element from end is : {curr.key}")
+
+# using the two pointer approach
+
+def nth_element_from_end_two_pntr(head,n):
+    if head == None:
+        return None
+    
+    first = head 
+    for i in range(n):
+        if first == None:
+            return
+        first = first.next
+
+    second = head
+    while first != None:
+        first = first.next
+        second = second.next 
+    print(f"\n{n}th element in the SLL is :{second.key}")
+```
+
+### remove duplicates from the sorted linked list 
+
+```python
+def remove_duplicates_from_sll(head):
+    if head == None:
+        return None
+    
+    curr = head 
+    while curr != None and curr.next != None:
+        if  curr.key == curr.next.key :
+            curr.next = curr.next.next
+        else:
+            curr = curr.next 
+    
+    return head
+```
+
+### reverse a linked list
+*  below used the auxiliary od O(n)
+```python
+def reverse_linked_list(head):
+    if head == None:
+        return None
+    
+    stack = []
+    curr = head
+    while curr != None :
+        stack.append(curr.key)
+        curr = curr.next
+
+    print(stack)
+
+    curr = head
+    while curr != None:
+        item = stack.pop()
+        curr.key = item
+        curr = curr.next
+    return head
 ```
