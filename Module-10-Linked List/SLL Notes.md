@@ -3,7 +3,7 @@
 #### Singly Linked List
 - We need to give curr != None only when we in case of searching and printing the elements.
 - In the other cased we need not traverse till the last element .
-- 
+
 
 ```python
 def print_list(head):
