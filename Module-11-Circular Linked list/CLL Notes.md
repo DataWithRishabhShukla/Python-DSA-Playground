@@ -24,3 +24,39 @@ def print_circular(head):
         print(curr.key ,end=" ")
         curr = curr.next
 ```
+
+
+#### Inserting in the circular list 
+- using naive approach requires O(n)
+##### Tricky approach O(1) 
+
+- Point node.next = head.next 
+- We insert the values after the head -> head.next = node
+- Swap the values between head and temp
+- Just return head in case of insert at start
+- Just return temp in case of insert at end
+
+
+```python 
+def insert_at_end_tricky(head,key):
+    temp =  Node(key)
+    if head == None :
+        temp.next = temp
+        return temp
+    
+    temp.next = head.next 
+    head.next = temp
+    head.key, temp.key = temp.key , head.key
+    return temp
+
+def insert_at_start_tricky(head,key):
+    temp =  Node(key)
+    if head == None :
+        temp.next = temp
+        return temp
+    
+    temp.next = head.next 
+    head.next = temp
+    head.key, temp.key = temp.key , head.key
+    return head 
+```
