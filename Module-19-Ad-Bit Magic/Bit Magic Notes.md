@@ -39,9 +39,34 @@
 ------------
 6|3 : 1 1 1 
 
-```Python
+```python
 >>> c = 6
 >>> d = 3
 >>> c|d
 7
 ```
+
+#### Bitwise XOR: ^
+* **Rule:** If two input are same then output is 0 else 1 . 
+6   : 1 1 0
+3   : 0 1 1
+------------
+6|3 : 1 0 1 
+
+```python
+>>> c = 6
+>>> d = 3
+>>> c^d
+5
+```
+
+#### Left Shift Operator : << 
+* **Rule:** Add number of zero from the left side .
+* Multiplying by power of 2
+
+#### Left Shift Operator : >>
+* **Rule:** Add number of zero from the right side .
+* Last bit is removed 
+* Deviding by power of two 
+
+#### Bitwise Not : ~
