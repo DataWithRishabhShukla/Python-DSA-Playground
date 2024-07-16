@@ -60,3 +60,9 @@ def insert_at_start_tricky(head,key):
     head.key, temp.key = temp.key , head.key
     return head 
 ```
+
+
+#### Edge Cases 
+1. List is empty
+2. List has one element 
+3. List has more than one element 
