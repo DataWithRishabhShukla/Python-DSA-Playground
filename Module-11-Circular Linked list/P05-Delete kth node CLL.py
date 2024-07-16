@@ -78,13 +78,25 @@ def delete_head(head):
     curr.next = head.next
     return curr.next
 
-def delete_head(head):
+def delete_head_tricky(head):
     if head is None or head.next == head:
         return None
 
-    curr = head.next 
     head.key = head.next.key
     head.next = head.next.next
+    return head
+
+def delete_nth_node(head,k):
+    if head == None:
+        return None
+    elif k ==1:
+        delete_head(head)
+    
+    curr = head 
+    for i in range(k-2):
+        curr = curr.next
+    
+    curr.next = curr.next.next
     return head
 
 head = Node(10)
@@ -96,9 +108,6 @@ head.next.next.next.next = head
 print_circular(head)
 print('\n')
 
-
-print('\n')
+head = delete_nth_node(head,2)
 print_circular(head)
 print('\n')
-head = delete_head(head)
-print_circular(head)
