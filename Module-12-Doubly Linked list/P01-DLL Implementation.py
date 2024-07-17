@@ -5,6 +5,10 @@ class Node :
         self.prev = None
 
 def print_dll(head):
+    if head is None:
+        print("!! DLL is empty !!\n")
+        return
+
     curr = head
     print("Printing the DLL: ")
     while curr != None:
@@ -36,6 +40,25 @@ def insert_at_end(head,data):
     return head
 
 
+def delete_head_node(head):
+    if head is None or head.next is None:
+        return None
+    
+    temp = head.next 
+    temp .prev = None
+    return temp
+
+def delete_last_node(head):
+    if head is None or head.next is None:
+        return None
+
+    curr = head
+    while curr.next.next != None:
+        curr = curr.next
+    
+    curr.next = None
+    return head
+
 head = Node(10)
 
 temp1 = Node(20)
@@ -49,7 +72,28 @@ temp2.prev = temp1
 print_dll(head)
 
 head = insert_at_begin(head,5)
+print("Inserting at the begin !!")
 print_dll(head)
 
-head = insert_at_end(head,40)
+head = insert_at_end(head,40) #inserting at the end of DLL
+print("Inserting at the end !!")
 print_dll(head)
+
+head_sinle_node = Node(10) #creating the single node DLL 
+head_sinle_node = delete_head_node(head_sinle_node)
+print("Deleted the head in a single node DLL !!")
+print_dll(head_sinle_node)
+
+head = delete_head_node(head) #deleting the head node 
+print("Deleted the head !!")
+print_dll(head)
+
+
+head = delete_last_node(head) #delete the last node from the DLL
+print("Deleted the last node !!")
+print_dll(head)
+
+head_sinle_node = Node(10) #creating the single node DLL 
+head_sinle_node = delete_last_node(head_sinle_node)
+print("Deleted the last in a single node DLL !!")
+print_dll(head_sinle_node)
