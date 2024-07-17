@@ -2,7 +2,9 @@
 
 #### binary represent -ve numbers
 * Two's complement is used to binary represent -ve numbers
- 
+### Two's complement
+* Get the one's complement of number 
+* Add one to it 
 
 
 #### Bitwise Operators in Python
