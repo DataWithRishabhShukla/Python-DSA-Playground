@@ -59,6 +59,22 @@ def delete_last_node(head):
     curr.next = None
     return head
 
+def reverse_dll(head):
+    if head is None or head.next is None :
+        return head
+    
+    curr = head
+    prev = None 
+
+    while curr != None:
+        prev = curr
+        curr.next , curr.prev = curr.prev , curr.next
+        curr = curr.prev
+    
+    return prev
+
+
+
 head = Node(10)
 
 temp1 = Node(20)
@@ -97,3 +113,7 @@ head_sinle_node = Node(10) #creating the single node DLL
 head_sinle_node = delete_last_node(head_sinle_node)
 print("Deleted the last in a single node DLL !!")
 print_dll(head_sinle_node)
+
+head = reverse_dll(head) #reversing the dll
+print("Reversing the DLL ")
+print_dll(head)
