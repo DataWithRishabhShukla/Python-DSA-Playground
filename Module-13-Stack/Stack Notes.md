@@ -103,7 +103,8 @@ print(stack.peek())
     - +ab -> Prefix
     - ab+ -> Postfix
     - Infix is more human readable
-    - but infix is difficult for 
+    - but infix is difficult for compiler
+    - so compilet would  convert the infix to prefix or postfix   
 - Evaluation of postfix /prefix
 - Stock span problem 
 - Undo / Redo or Forward /Backward 
