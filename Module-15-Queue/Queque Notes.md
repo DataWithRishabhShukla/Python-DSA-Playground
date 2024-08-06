@@ -27,6 +27,7 @@
     - Uses Collections.deque internally 
 - Our own Implementation 
 
+#### Video 3 - Queue implementation Python 
 - **Using List**
     - Only disadvantage in pop uses O(n) time as it removes and shift all elements.
     - enque -> O(1)
@@ -63,3 +64,5 @@ print(len(q)) #size
 print(q[0]) #getFront
 print(q[-1]) #getRear
 ```
+
+#### Video 4 - Queue implementation Using single LinkedList 
